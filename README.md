@@ -28,13 +28,12 @@ A multithreaded Python application running on your PC captures screen content, d
 
 * **⚡ Ultra-Low Latency Pipeline:** Frame compute takes `<1 ms` using single-pass NumPy array reshaping and color averaging—no per-pixel or per-zone Python loops.
 * **🎮 Gaming Optimized:**
-  * Runs at `IDLE` OS process priority so competitive games (e.g., *Valorant*) always get 100% CPU scheduling.
+  * Runs at `IDLE` OS process priority so competitive games always get 100% CPU scheduling.
   * Direct GDI box capture (`"center"` band) reduces GPU PCIe readback overhead by **~90%** compared to full-screen captures.
 * **📶 Wireless Over-The-Air (OTA) Updates:** Built-in web server powered by **ElegantOTA** allows flashing new firmware directly over Wi-Fi without needing a USB cable.
 * **📊 Built-in Telemetry & Benchmarking:**
   * Live profiling of capture time, compute time, and network latency (`stats` / `fps`).
   * Direct hardware querying to verify ESP32 packet reception and ingest rate (`esp`).
-  * CV / portfolio benchmark generator (`bench [seconds]`).
 * **🎨 Standalone Modes:** Trigger independent animations (`rainbow`, `solid <r> <g> <b>`, `stop`) that run autonomously on the ESP32 chip without requiring PC streaming.
 
 ---
@@ -79,7 +78,6 @@ A multithreaded Python application running on your PC captures screen content, d
    #define WIFI_SSID "Your_WiFi_Network"
    #define WIFI_PASSWORD "Your_WiFi_Password"
    ```
-   *(Note: `secrets.h` is ignored by git and will never be pushed to your repository).*
 4. In Arduino IDE under **Tools**:
    * **Board:** `ESP32 Dev Module`
    * **Partition Scheme:** `Minimal SPIFFS (1.9MB APP with OTA/190KB SPIFFS)` *(required for OTA)*
@@ -103,10 +101,11 @@ A multithreaded Python application running on your PC captures screen content, d
    ```bash
    pip install -r requirements.txt
    ```
-4. Open [`config.py`](config.py) and update `ESP32_IP` with your device's IP:
-   ```python
-   ESP32_IP = "192.168.0.xxx"
+4. Copy `.env.example` to `.env` and set your ESP32's assigned IP address:
+   ```bash
+   cp .env.example .env
    ```
+   *(Note: `.env` is ignored by git so your IP is never exposed).*
 
 ### 3. Running the System
 Start the screen capture and CLI:
