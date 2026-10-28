@@ -218,3 +218,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Local Arduino Wi-Fi credentials
+arduinofile/secrets.h
