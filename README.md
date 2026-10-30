@@ -46,9 +46,9 @@ A multithreaded Python application running on your PC captures screen content, d
 - [x] ElegantOTA wireless firmware flashing & zero-allocation status endpoint.
 - [x] Interactive CLI with decorator-based command system.
 - [x] Real-time latency & FPS telemetry.
+- [x] **Auto-Discovery (mDNS):** Automatically finds `esp32-ambient.local` on the network without needing static IPs.
 - [ ] **📱 Companion Android App:** A mobile application (Flutter / Kotlin) to control power, solid colors, brightness, and animations over local Wi-Fi without needing the PC running.
 - [ ] **Autonomous Hardware Wave/Scanner Effects:** Additional standalone C++ animations stored in ESP32 flash memory for zero-PC ambient lighting.
-- [ ] **Auto-Discovery (mDNS / SSDP):** Automatically find the ESP32 on the local network without manually setting static IPs.
 
 ---
 
